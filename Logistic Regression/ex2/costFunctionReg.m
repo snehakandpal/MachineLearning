@@ -24,7 +24,6 @@ t_reg = theta(2:size(theta));
 J = ((1 / m) * (((-y)' * log(h)) - ((1 - y)' * log(1 - h)))) + (lambda / (2 * m)) * t_reg' * t_reg;
 
 grad = ((1 / m) * X' * (h - y));
- + (lambda / m) * t_reg;
 
 for iter = 2:size(theta,1)
   grad(iter) = grad(iter) + (lambda / m) * t_reg(iter - 1);
